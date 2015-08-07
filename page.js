@@ -575,10 +575,9 @@
     if (!sameOrigin(el.href)) return;
 
 
-    // fix for IE9 for not having leading slash (issue #259)
+    // fix for IE9 for not having leading slash
     var pathname = el.pathname;
-    pathname = pathname[0] !== "/" ? "/" + pathname : pathname;
-
+    pathname = pathname[0] != "/" ? "/" + pathname : pathname;
 
     // rebuild path
     var path = pathname + el.search + (el.hash || '');
